@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice CRUD</title>
+</head>
+<body>
+  <h1>YOU CAN ADD PRODUCTS HERE </h1>
+  <ul>
+    <% items.forEach(item => { %>
+      <li><%= item.name %> - <a href="/edit/<%= item._id %>">Edit</a> | <a href="/delete/<%= item._id %>">Delete</a></li>
+    <% }); %>
+  </ul>
+  <form action="/add" method="post">
+    <label for="name">Item Name:</label>
+    <input type="text" id="name" name="name" required>
+    <button type="submit">ADD TO STORE</button>
+  </form>
+</body>
+</html>
